@@ -10,17 +10,17 @@
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
     
-    /* Brand Primary - Deep Purple */
-    --primary: 262 83% 58%;
+    /* Brand Primary - Modern Purple to Blue */
+    --primary: 250 84% 60%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 262 83% 70%;
+    --primary-glow: 270 91% 70%;
     
-    /* Brand Secondary - Tech Blue */
+    /* Brand Secondary - Refined Gray */
     --secondary: 213 27% 84%;
     --secondary-foreground: 224 71.4% 4.1%;
     
-    /* Accent - Electric Cyan */
-    --accent: 199 89% 48%;
+    /* Accent - Vibrant Cyan */
+    --accent: 190 84% 55%;
     --accent-foreground: 0 0% 98%;
     
     /* Surface Colors */
@@ -42,15 +42,15 @@
     --ring: 262 83% 58%;
     
     /* Premium Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(262 83% 58%), hsl(199 89% 48%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14.3% 95.9%));
-    --gradient-brand: linear-gradient(90deg, hsl(262 83% 58%), hsl(199 89% 48%));
+    --gradient-hero: linear-gradient(135deg, hsl(250 84% 60%) 0%, hsl(270 91% 70%) 30%, hsl(190 84% 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14.3% 97%));
+    --gradient-brand: linear-gradient(90deg, hsl(250 84% 60%), hsl(190 84% 55%));
     
     /* Shadows */
     --shadow-soft: 0 2px 8px -2px hsl(224 71.4% 4.1% / 0.08);
     --shadow-medium: 0 8px 25px -8px hsl(224 71.4% 4.1% / 0.12);
     --shadow-large: 0 25px 50px -12px hsl(224 71.4% 4.1% / 0.15);
-    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.3);
+    --shadow-glow: 0 0 40px hsl(250 84% 60% / 0.3);
 
     --radius: 0.75rem;
 
@@ -77,14 +77,14 @@
     --foreground: 0 0% 98%;
     
     /* Brand Colors in Dark */
-    --primary: 262 83% 58%;
+    --primary: 250 84% 65%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 262 83% 70%;
+    --primary-glow: 270 91% 75%;
     
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 0 0% 98%;
     
-    --accent: 199 89% 48%;
+    --accent: 190 84% 60%;
     --accent-foreground: 0 0% 98%;
     
     /* Dark Surfaces */
@@ -105,15 +105,15 @@
     --ring: 262 83% 58%;
     
     /* Dark Mode Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(262 83% 58%), hsl(199 89% 48%));
+    --gradient-hero: linear-gradient(135deg, hsl(250 84% 65%) 0%, hsl(270 91% 75%) 30%, hsl(190 84% 60%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(224 71.4% 4.1%), hsl(215 27.9% 16.9%));
-    --gradient-brand: linear-gradient(90deg, hsl(262 83% 58%), hsl(199 89% 48%));
+    --gradient-brand: linear-gradient(90deg, hsl(250 84% 65%), hsl(190 84% 60%));
     
     /* Dark Shadows */
     --shadow-soft: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
     --shadow-medium: 0 8px 25px -8px hsl(0 0% 0% / 0.4);
     --shadow-large: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.4);
+    --shadow-glow: 0 0 40px hsl(250 84% 65% / 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -178,5 +178,39 @@
   
   .hover-scale:hover {
     transform: scale(1.02);
+  }
+
+  /* Additional animations for multi-page site */
+  @keyframes glow {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
   }
 }
